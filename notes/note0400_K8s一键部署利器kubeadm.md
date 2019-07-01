@@ -83,8 +83,16 @@ kubeadm init 的最后一步，就是安装默认插件。Kubernetes 默认 kube
 # kubeadm join 的工作流程
 
 
+kubeadm init 生成 bootstrap token 之后，你就可以在任意一台安装了 kubelet 和 kubeadm 的机器上执行 kubeadm join 了。
 
 
+# 配置 kubeadm 的部署参数
+
+指定 kube-apiserver 的启动参数，该怎么办？
+
+$ kubeadm init --config kubeadm.yaml
 
 
-
+# kubeadm 这个部署工具
+一方面，作为 Kubernetes 项目的原生部署工具，kubeadm 对 Kubernetes 项目特性的使用和集成，确实要比其他项目“技高一筹”，非常值得我们学习和借鉴；
+另一方面，kubeadm 的部署方法，不会涉及到太多的运维工作，也不需要我们额外学习复杂的部署工具。而它部署的 Kubernetes 集群，跟一个完全使用二进制文件搭建起来的集群几乎没有任何区别。
